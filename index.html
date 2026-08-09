@@ -8,6 +8,8 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html { -webkit-text-size-adjust: 100%; }
+
   body {
     font-family: Georgia, 'Times New Roman', serif;
     background: linear-gradient(180deg, #cfe8f7 0%, #e4f1fa 35%, #f7f5f0 75%, #faf8f3 100%);
@@ -15,26 +17,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 32px 16px;
+    padding: 40px 20px;
     color: #2c3e50;
   }
 
   .card {
     background: #ffffff;
-    max-width: 720px;
+    max-width: 760px;
     width: 100%;
     border-radius: 14px;
     box-shadow: 0 10px 40px rgba(70, 120, 160, 0.18);
-    padding: 48px 52px 40px;
+    padding: 52px 60px 44px;
     text-align: center;
   }
 
-  .logo { width: 220px; max-width: 60%; height: auto; margin-bottom: 28px; }
+  .logo { width: 200px; max-width: 55%; height: auto; margin-bottom: 30px; }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     font-weight: normal;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     color: #1f6fa5;
     margin-bottom: 6px;
   }
@@ -42,51 +44,103 @@
   .rule {
     width: 64px; height: 3px;
     background: #9bc93d;
-    margin: 18px auto 24px;
+    margin: 20px auto 26px;
     border-radius: 2px;
   }
 
-  p { font-size: 1.02rem; line-height: 1.7; margin-bottom: 18px; text-align: left; }
+  .notice p {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 0 auto 16px;
+    max-width: 58ch;
+    text-align: center;
+  }
 
-  .notice p:first-of-type { text-align: center; }
+  .notice .lead {
+    font-size: 1.08rem;
+    margin-bottom: 20px;
+  }
 
   .contact-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    margin: 26px 0 22px;
+    gap: 18px;
+    margin: 30px 0 26px;
     text-align: left;
   }
 
   .contact-box {
-    flex: 1 1 280px;
+    flex: 1 1 300px;
     background: #f4f9fd;
     border: 1px solid #dcebf5;
     border-radius: 10px;
-    padding: 20px 22px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
   }
 
   .contact-box h2 {
-    font-size: 0.95rem;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     color: #1f6fa5;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     font-weight: bold;
   }
 
-  .contact-box p { font-size: 0.95rem; margin-bottom: 6px; line-height: 1.55; }
+  .contact-box .box-rule {
+    width: 34px; height: 2px;
+    background: #9bc93d;
+    margin: 8px 0 14px;
+    border-radius: 1px;
+  }
+
+  .contact-box p {
+    font-size: 0.92rem;
+    margin-bottom: 9px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+
+  .contact-box p:last-child { margin-bottom: 0; }
+
+  .contact-box .label {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7a8794;
+    display: block;
+    margin-bottom: 1px;
+  }
 
   a { color: #1f6fa5; text-decoration: none; border-bottom: 1px solid #bcd9ea; }
   a:hover { border-bottom-color: #1f6fa5; }
 
   .legal {
     border-top: 1px solid #e8e4da;
-    margin-top: 26px;
-    padding-top: 20px;
-    font-size: 0.8rem;
-    color: #7a8794;
-    line-height: 1.6;
+    margin-top: 28px;
+    padding-top: 22px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.7rem;
+    color: #8a95a1;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  .legal p { margin-bottom: 10px; }
+  .legal p:last-child { margin-bottom: 0; }
+  .legal .co { color: #6e7a86; }
+  .legal .nowrap { white-space: nowrap; }
+  .legal .sep { color: #c3ccd4; padding: 0 6px; }
+
+  @media (max-width: 600px) {
+    body { padding: 20px 12px; }
+    .card { padding: 34px 24px 30px; }
+    h1 { font-size: 1.35rem; }
+    .notice p { text-align: left; }
+    .notice .lead { text-align: center; }
   }
 </style>
 </head>
@@ -98,31 +152,34 @@
     <div class="rule"></div>
 
     <div class="notice">
-      <p><strong>Data Jigsaw Limited no longer holds any metering contracts.</strong></p>
-      <p>With effect from 27 July 2026, all electricity metering contracts held by Data Jigsaw Limited transferred by formal Deed of Novation to our parent energy management firm, <strong>Better Connections Limited</strong>. Your contract terms, pricing and service levels remain unchanged and are fully upheld by Better Connections Limited. Our relationship with our data collection partner, IMSERV, remains in place.</p>
+      <p class="lead"><strong>Data Jigsaw Limited no longer holds any metering contracts.</strong></p>
+      <p>With effect from 27 July 2026, all electricity metering contracts held by Data Jigsaw Limited transferred by formal Deed of Novation to our parent energy management firm, <strong>Better Connections Limited</strong>.</p>
+      <p>Your contract terms, pricing and service levels remain unchanged and are fully upheld by Better Connections Limited. Our relationship with our data collection partner, IMSERV, remains in place.</p>
       <p>Better Connections Limited is now your single point of contact for all energy management, metering and data collection services.</p>
     </div>
 
     <div class="contact-grid">
       <div class="contact-box">
         <h2>Better Connections Limited</h2>
-        <p>Phil Jones, Operations Director &amp; Corporate Energy Lead</p>
-        <p>Email: <a href="mailto:phil.jones@bc-consultants.co.uk">phil.jones@bc-consultants.co.uk</a></p>
-        <p>Telephone: <a href="tel:08452177525">0845 217 7525</a></p>
-        <p>Website: <a href="https://betterconnected.biz" rel="noopener">betterconnected.biz</a></p>
+        <div class="box-rule"></div>
+        <p><span class="label">Contact</span>Phil Jones, Operations Director &amp; Corporate Energy Lead</p>
+        <p><span class="label">Email</span><a href="mailto:phil.jones@bc-consultants.co.uk">phil.jones@bc-consultants.co.uk</a></p>
+        <p><span class="label">Telephone</span><a href="tel:08452177525">0845 217 7525</a></p>
+        <p><span class="label">Website</span><a href="https://betterconnected.biz" rel="noopener">betterconnected.biz</a></p>
       </div>
       <div class="contact-box">
         <h2>Data Jigsaw Enquiries</h2>
+        <div class="box-rule"></div>
         <p>For any queries relating to your former Data Jigsaw account or this transfer:</p>
-        <p>Email: <a href="mailto:csg@datajigsaw.co.uk">csg@datajigsaw.co.uk</a></p>
+        <p><span class="label">Email</span><a href="mailto:csg@datajigsaw.co.uk">csg@datajigsaw.co.uk</a></p>
       </div>
     </div>
 
     <div class="legal">
-      <p>Data Jigsaw Limited &middot; Registered in England &amp; Wales &middot; Company No. 09655831<br>
-      Registered office: 231 Elliott Street, Tyldesley, Manchester M29 8DG</p>
-      <p>Better Connections Limited &middot; Registered in England &amp; Wales &middot; Company No. 07294707<br>
-      Barn 1, Somerford Business Court, Holmes Chapel Road, Somerford, Cheshire CW12 4SN</p>
+      <p><span class="co">Data Jigsaw Limited</span><span class="sep">&bull;</span>Registered in England &amp; Wales<span class="sep">&bull;</span><span class="nowrap">Company No. 09655831</span><br>
+      231 Elliott Street, Tyldesley, <span class="nowrap">Manchester M29 8DG</span></p>
+      <p><span class="co">Better Connections Limited</span><span class="sep">&bull;</span>Registered in England &amp; Wales<span class="sep">&bull;</span><span class="nowrap">Company No. 07294707</span><br>
+      Barn 1, Somerford Business Court, Holmes Chapel Road, Somerford, <span class="nowrap">Cheshire CW12 4SN</span></p>
     </div>
   </main>
 </body>
